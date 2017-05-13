@@ -11,7 +11,7 @@ shell> yum repolist enabled | grep "mysql.*-community.*"
 ```
 ![image](https://github.com/shunui/shunui.github.io/blob/master/images/mysql/centos7installmysql.png)
 
-## 然后就可以安装mysql了
+## 安装mysql
 ```shell
 安装
 yum install mysql-community-server
@@ -29,7 +29,7 @@ grep 'temporary password' /var/log/mysqld.log
 结果如下
 ```
 ![image](https://github.com/shunui/shunui.github.io/blob/master/images/mysql/temporary_password.png)
-## 然后就是登陆了
+## 登陆
 ```shell
 mysql -uroot -p
 输入默认的密码
@@ -38,7 +38,7 @@ set password for 'root'@'localhost'=password('your_password');//注意此处密�
 然后就需要设置防火墙了
 iptables -I INPUT -p tcp --dport 3306 -j ACCEPT #放开3306端口的访问
 
-mysql> create user 'sunhui'@'%' IDENTIFIED BY 'Shunui!@#5410'; #添加mysql账号
+mysql> create user 'sunhui'@'%' IDENTIFIED BY 'your_password'; #添加mysql账号
 mysql> GRANT ALL ON *.* TO 'sunhui'@'%'; #设置mysql账号权限
 
 具体参考了 http://www.linuxidc.com/Linux/2016-09/135288.htm
