@@ -13,4 +13,5 @@ cat /proc/cpuinfo| grep "processor"| wc -l
 
 view:
 http://www.cnblogs.com/emanlee/p/3587571.html
+
 http://blog.csdn.net/liugongfeng/article/details/50263377
